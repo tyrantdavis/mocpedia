@@ -16,8 +16,30 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
-.pull-right {
+.sign-up-in-links {
+  position: relative;
+  left:325px;
+}
+
+.right {
   position: relative;
   top: 10px;
-  padding-right: 20px;
+  left: 390px;
+}
+
+.left {
+  position: relative;
+  right: 15px;
+}
+
+
+// In progress...Not responding with expected behavior for visited and active
+li.links:link { text-decoration: none;}
+li.links:visited {
+  color: grey; //test color
+  text-decoration: none;}
+li.links:hover {text-decoration: underline;}
+li.links:active {
+  color: black; //test color
+  text-decoration: none;
 }
