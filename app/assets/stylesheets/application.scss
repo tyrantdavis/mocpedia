@@ -33,13 +33,16 @@
 }
 
 
-// In progress...Not responding with expected behavior for visited and active
-li.links:link { text-decoration: none;}
+li.links:link { font-weight: bold;}
 li.links:visited {
-  color: grey; //test color
+  color: grey;
   text-decoration: none;}
 li.links:hover {text-decoration: underline;}
-li.links:active {
-  color: black; //test color
-  text-decoration: none;
+.links:active {
+  color: black;
+  font-weight: bolder;
 }
+
+// #user-float {
+//   display: inline;
+// }
