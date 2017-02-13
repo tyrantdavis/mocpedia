@@ -6,7 +6,7 @@ class CreateWikis < ActiveRecord::Migration
       t.boolean :private
       t.references :user, index: true, foreign_key: true
 
-      t.timestamps null: false
+      t.timestamps null: false`
     end
   end
 end
