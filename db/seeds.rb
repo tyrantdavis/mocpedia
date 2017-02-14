@@ -3,7 +3,7 @@ require 'random_data'
 5.times do
     user= User.new(
         email: RandomData.random_email,
-        password: "password",
+        password: "password"
         )
     user.save!
 end
@@ -14,8 +14,7 @@ users = User.all
     Wiki.create!(
         title: RandomData.random_sentence,
         body: RandomData.random_paragraph,
-        private: false,
-        user: User.last
+        private: false
         )
 end
 
