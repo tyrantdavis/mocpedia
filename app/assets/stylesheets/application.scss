@@ -18,13 +18,14 @@
 
 .sign-up-in-links {
   position: relative;
-  left:265px;
+  left: 265px;
 }
 
 .right {
   position: relative;
   top: 10px;
-  left: 390px;
+  left: 260px;
+  // horizontal position arbitrarily shifts when rendering
 }
 
 .left {
@@ -45,4 +46,41 @@ li.links:hover {text-decoration: underline;}
 
 // #user-float {
 //   display: inline;
+// }
+
+.well-container {
+  width: 400px;
+  height: 275px;
+  display: inline-table;
+}
+
+.two {
+  position: relative;
+  left: 95px;
+  // position arbitrarily shifts when rendered
+  // to see it in action after sign-up click about, then wikis, then Blocipedia.
+}
+
+.center-block {
+  margin-top: 25px;
+}
+
+.center li {
+  font-weight: bold;
+  text-align: center;
+
+}
+
+h2 {
+  font-weight: bolder;
+  text-align: center;
+}
+
+.premi span {
+  color: #cd950c;
+}
+
+// .TEST {
+//   font-size: 18px;
+//   text-align: center;
 // }
