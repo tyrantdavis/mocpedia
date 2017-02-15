@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe WikisController, type: :controller do
 
-  let(:my_wiki) { Wiki.create!(title:RandomData.random_sentence, body: RandomData.random_paragraph) }
+  let(:my_wiki) { Wiki.create!(title:RandomData.random_sentence, body: RandomData.random_paragraph, user_id: 1) }
 
   describe "GET #index" do
     it "returns http success" do
@@ -12,7 +12,6 @@ RSpec.describe WikisController, type: :controller do
 
     it "assigns [my_wiki] to @wikis" do
       get :index
-
       expect(assigns(:wikis)).to eq([my_wiki])
     end
   end

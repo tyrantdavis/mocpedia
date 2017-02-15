@@ -24,7 +24,7 @@
 .right {
   position: relative;
   top: 10px;
-  left: 260px;
+  float: right;
   // horizontal position arbitrarily shifts when rendering
 }
 
@@ -32,7 +32,7 @@
   position: relative;
   right: 15px;
 }
-
+      
 
 li.links:link { font-weight: bold;}
 li.links:visited {
@@ -49,6 +49,7 @@ li.links:hover {text-decoration: underline;}
 // }
 
 .well-container {
+  margin-top: 10px;
   width: 400px;
   height: 275px;
   display: inline-table;
@@ -56,7 +57,8 @@ li.links:hover {text-decoration: underline;}
 
 .two {
   position: relative;
-  left: 95px;
+  // float: right;
+
   // position arbitrarily shifts when rendered
   // to see it in action after sign-up click about, then wikis, then Blocipedia.
 }
@@ -68,6 +70,7 @@ li.links:hover {text-decoration: underline;}
 .center li {
   font-weight: bold;
   text-align: center;
+
 
 }
 
@@ -84,3 +87,23 @@ h2 {
 //   font-size: 18px;
 //   text-align: center;
 // }
+
+.container-fluid {
+  border-color: black;
+  border-width: thin;
+  width: auto;;
+  height: auto;
+
+}
+
+/* Basic style rule to outline and space block-level elements */
+.jumbotron {
+    // height: 300px;
+    font-size: 48px;
+    text-align: center;
+    background: #eee;
+    margin-bottom: 10px;
+}
+.navbar-link {
+  text-decoration: none;
+}
