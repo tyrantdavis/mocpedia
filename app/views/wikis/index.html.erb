@@ -1,14 +1,28 @@
-<h1>Wikis</h1>
-
-<% @wikis.each do |wiki| %>
- <div class="media">
-  <div class="media-body">
-   <h4 class="media-heading">
-     <%= link_to wiki.title, wiki %>
-
-
-  <p>Find me in app/views/wikis/index.html.erb</p>
-      </h4>
-    </div>
+<div class="container-fluid">
+  <div class="row"></div>
+ <h1 class="text-center text-muted">Wikis
+  <div class="col-md-4">
+   <%= link_to "New Wiki", new_wiki_path, class: 'btn btn-primary btn-block' %>
   </div>
-<% end %>
+
+  </h1>
+ </div>
+<span>&nbsp;</span>
+ <div class="row">
+   <div class="col-md-8">
+ <!-- #7 -->
+     <% @wikis.each do |wiki| %>
+       <div class="media">
+         <div class="media-body">
+           <h4 class="media-heading">
+ <!-- #8 -->
+             <%= link_to wiki.title, wiki %>
+           </h4>
+           <small>
+             <%= wiki.body %>
+           </small>
+         </div>
+       </div>
+     <% end %>
+   </div>
+ </div>

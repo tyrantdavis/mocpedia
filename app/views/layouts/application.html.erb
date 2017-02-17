@@ -15,16 +15,18 @@
                 <li class="active left links"><%= link_to "Blocipedia", root_path, :class => 'navbar-link' %></li>
                 <li class="left links"><%= link_to "About", about_path, :class => 'navbar-link' %></li>
                 <li class="left links"><%= link_to "Wikis", wikis_path %></li>
-              <span class="right nav nav-tabs"  style="border-bottom:none;">
+
+              <div class="right nav nav-tabs"  style="border-bottom:none;">
                 <% if user_signed_in? || current_user %>
                   User: <strong><%= current_user.email %></strong> |
                   <%= link_to 'Edit Profile', edit_user_registration_path, :class => 'navbar-link' %> or <%= link_to "Sign Out", destroy_user_session_path, :class => 'navbar-link'  %>
+
                   <% else %>
                 <span class="sign-up-in-links">
-                  <%= link_to "Sign In", new_user_session_path, :class => 'navbar-link'  %>
+                  <li><%= link_to "Sign In", new_user_session_path, :class => 'navbar-link'  %></li>
                 </span>
               <% end %>
-                </span>
+            </div>
             </ul>
         </div>
     </nav>
@@ -40,7 +42,7 @@
         <%= flash[:alert] %>
       </div>
     <% end %>
-    
+
       <%= yield %>
   </div>
 </body>

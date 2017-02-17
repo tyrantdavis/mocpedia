@@ -1,4 +1,4 @@
-<div class="container">
+ <div class="container">
   <div class="jumbotron">
     <h1 class="title text-center">Blocipedia</h1>
       <p class="text-center text-muted"> A markdown-based collaboration and information exchange platform that allows users to create and share wikis with the world community.</p>
@@ -20,7 +20,12 @@
         <li>Option to Upgrade to Premium</li>
       </ul>
     </span>
-      <button type="button" class="btn btn-info btn-lg btn-block center-block">Join Us! <span class="badge">Free</span></button></div>
+      <button type="button" class="btn btn-info btn-lg btn-block center-block">
+
+        <%= link_to "Join Us!",new_user_registration_path, :class => 'navbar-link white-text'  %>
+        <span class="badge">Free</span>
+      </button>
+    </div>
 
     <div class="pull-right well well-container well-lg col-sm-6 two ">
       <h2 class="center premi">Go <span>PREMIUM!</span></h2>
