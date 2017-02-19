@@ -1,21 +1,16 @@
 <div class="container-fluid">
   <div class="row"></div>
- <h1 class="text-center text-muted">Wikis
-  <div class="col-md-4">
-   <%= link_to "New Wiki", new_wiki_path, class: 'btn btn-primary btn-block' %>
-  </div>
+ <h1 class="text-center text-muted clear">Wikis</h1>
 
-  </h1>
+
  </div>
 <span>&nbsp;</span>
  <div class="row">
-   <div class="col-md-8">
- <!-- #7 -->
-     <% @wikis.each do |wiki| %>
+   <div class="col-md-12">
+       <% @wikis.each do |wiki| %>
        <div class="media">
          <div class="media-body">
            <h4 class="media-heading">
- <!-- #8 -->
              <%= link_to wiki.title, wiki %>
            </h4>
            <small>
@@ -26,3 +21,7 @@
      <% end %>
    </div>
  </div>
+
+ <div>
+  <%= link_to "New Wiki", new_wiki_path, class: 'btn btn-primary btn-block' %>
+</div>
