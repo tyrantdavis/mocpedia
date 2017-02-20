@@ -1,3 +1,3 @@
-class WikiPolicy
-  
+class WikiPolicy < ApplicationPolicy
+
 end
