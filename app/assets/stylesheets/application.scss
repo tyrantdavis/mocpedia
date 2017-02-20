@@ -16,9 +16,9 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
-.sign-up-in-links {
-  position: relative;
-  left: 265px;
+.user-info {
+  margin-top: 10px;
+  margin-right: 20px;
 }
 
 .right {
@@ -28,8 +28,8 @@
 }
 
 .left {
-  position: relative;
-  right: 15px;
+  position: absolute;
+  right: 20px;
 }
 
 
@@ -86,9 +86,7 @@ h2 {
 /* Basic style rule to outline and space block-level elements */
 .jumbotron {
     font-size: 48px;
-    text-align: center;
-    background: #eee;
-    margin-bottom: 10px;
+    font-weight: 900;
 }
 .navbar-link {
   text-decoration: none;
@@ -101,5 +99,9 @@ h2 {
 
 .white-text {
   color: white;
-  text-decoration: none; 
+  text-decoration: none;
+}
+
+.premiwell {
+  background-color: black;
 }

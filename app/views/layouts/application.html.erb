@@ -10,40 +10,34 @@
 <body>
   <div class="container-fluid">
     <nav id="primary-navigation" class="row">
-        <div class="col-md-12 tabbable">
-            <ul class="nav nav-tabs" style="border-bottom:none;">
-                <li class="active left links"><%= link_to "Blocipedia", root_path, :class => 'navbar-link' %></li>
-                <li class="left links"><%= link_to "About", about_path, :class => 'navbar-link' %></li>
-                <li class="left links"><%= link_to "Wikis", wikis_path %></li>
 
-              <div class="right nav nav-tabs"  style="border-bottom:none;">
-                <% if user_signed_in? || current_user %>
-                  User: <strong><%= current_user.email %></strong> |
-                  <%= link_to 'Edit Profile', edit_user_registration_path, :class => 'navbar-link' %> or <%= link_to "Sign Out", destroy_user_session_path, :class => 'navbar-link'  %>
+     <ul class="nav nav-tabs active " style="border-bottom:none;">
+       <li ><%= link_to "Blocipedia", root_path %></li>
+       <li ><%= link_to "Wikis", wikis_path %></li>
+       <li ><%= link_to "About", about_path %></li>
 
-                  <% else %>
-                <span class="sign-up-in-links">
-                  <li><%= link_to "Sign In", new_user_session_path, :class => 'navbar-link'  %></li>
-                </span>
-              <% end %>
-            </div>
-            </ul>
-        </div>
-    </nav>
+       <div class="pull-right user-info">
+         <% if user_signed_in? %>
+         User: <strong><%= current_user.email %></strong> |
+         <span><%= link_to 'Go Premium', edit_user_registration_path, :class => 'navbar-link'  %></span> |
+         <%= link_to 'Edit Profile', edit_user_registration_path, :class => 'navbar-link' %> or <%= link_to "Sign Out", destroy_user_session_path  %>
 
-    <% if flash[:notice] %>
-      <div class="alert alert-success">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <%= flash[:notice] %>
+         <% else %>
+
+      <div class="pull-right">
+
+      </div class="user-info">
+          <li class="nav active left"><%= link_to "Sign In", new_user_session_path %></li>
+          <% end %>
       </div>
-    <% elsif flash[:alert] %>
-      <div class="alert alert-warning">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <%= flash[:alert] %>
-      </div>
-    <% end %>
 
-      <%= yield %>
-  </div>
+     </ul>
+   </nav>
+     <div class="jumbotron text-center ">Blocipedia
+       <p class="text-center text-muted"> A markdown-based collaboration and information exchange platform.</p>
+     </div>
+     <%= yield %>
+
+  </div> <!-- Do Not Go Outside This Div -->
 </body>
 </html>
