@@ -5,8 +5,12 @@ class User < ActiveRecord::Base
   # Delete wikis owned by user when user is deleted.
   has_many :wikis, dependent: :destroy
 
+  before_save { self.role ||= :standard }
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :lockable
+
+  enum role: [:standard, :premium, :admin]
 
 end
