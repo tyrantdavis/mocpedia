@@ -1,7 +1,8 @@
 require 'random_data'
 
 5.times do
-    user= User.new(
+    user = User.new(
+        name: RandomData.random_name,
         email: RandomData.random_email,
         password: "password"
         )
