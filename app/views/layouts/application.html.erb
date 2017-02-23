@@ -17,10 +17,16 @@
        <li ><%= link_to "About", about_path %></li>
 
        <div class="pull-right user-info">
-         <% if user_signed_in? %>
+         <% if user_signed_in?  && current_user.standard? %>
          <span class="text-muted">User Name:</span> <strong><%= current_user.name %></strong> |
-         <span><%= link_to 'Go Premium', edit_user_registration_path, :class => 'navbar-link'  %></span> |
+         <span><%= link_to 'Go Premium', new_charge_path, :class => 'navbar-link'  %></span> |
          <%= link_to 'Edit Profile', edit_user_registration_path, :class => 'navbar-link' %> or <%= link_to "Sign Out", destroy_user_session_path  %>
+
+
+         <!-- <% elsif user_signed_in?  && current_user.premium? %>
+         <span class="text-muted">User Name:</span> <strong><%= current_user.name %></strong> |
+         <span><%= link_to 'Standard', a_downgrade_path_here :class => 'navbar-link'  %></span> |
+         <%= link_to 'Edit Profile', edit_user_registration_path, :class => 'navbar-link' %> or <%= link_to "Sign Out", destroy_user_session_path  %> -->
 
          <% else %>
 
@@ -38,6 +44,6 @@
      </div>
      <%= yield %>
 
-  </div> <!-- Do Not Go Outside This Div -->
+  </div> 
 </body>
 </html>
