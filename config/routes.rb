@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :wikis
   resources :charges, only: [:new, :create]
+  resources :downgrade, only: [:new, :create]
 
   get 'welcome/index'
   get 'about' => 'welcome#about'
