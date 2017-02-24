@@ -1,6 +1,5 @@
 class WikisController < ApplicationController
 
-  # skip_before_filter :authenticate_user!
   before_action :set_wiki, except: [:new, :create, :index]
 
   def new
@@ -9,10 +8,6 @@ class WikisController < ApplicationController
   end
 
   def create
-    # @wiki = Wiki.new
-    # @wiki.title = params[:wiki][:title]
-    # @wiki.body = params[:wiki][:body]
-    # @wiki.user = current_user
 
     @wiki = current_user.wikis.new(wiki_params)
     authorize @wiki
