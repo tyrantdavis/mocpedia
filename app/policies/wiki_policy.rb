@@ -1,13 +1,6 @@
 class WikiPolicy < ApplicationPolicy
-  attr_reader :user, :wiki
-
-  def initialize(user, wiki)
-    @user = user
-    @wiki = wiki
-  end
-
   def create?
-    user.admin? || user.standard? || user.premium?
+    user.present?
   end
 
   def new?
@@ -15,7 +8,7 @@ class WikiPolicy < ApplicationPolicy
   end
 
   def update?
-    user.present?
+    user.present? && ((record.user == user) || user.admin?)
   end
 
   def edit?
@@ -24,7 +17,7 @@ class WikiPolicy < ApplicationPolicy
 
   def destroy?
     # if the wiki belongs to the current user or user is admin
-    (wiki.user == user) || user.admin?
+    user.present? && ((record.user == user) || user.admin?)
   end
 
 
@@ -48,7 +41,7 @@ class WikiPolicy < ApplicationPolicy
           if wiki.private == false
             wikis_ary.push(wiki)
           end
-        end # each method
+        end
 
       #if user is an admin show all wikis
       elsif user.admin?
@@ -61,7 +54,7 @@ class WikiPolicy < ApplicationPolicy
           if wiki.private == false || (wiki.user == user)
             wikis_ary.push(wiki)
           end
-        end # each method
+        end
       #if user standard show public wikis only
       else user.standard?
         wiKis
@@ -74,6 +67,6 @@ class WikiPolicy < ApplicationPolicy
       end
       # return array of wikis
       wikis_ary
-    end 
+    end
   end
 end
