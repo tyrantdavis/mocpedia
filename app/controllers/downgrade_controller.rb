@@ -15,7 +15,7 @@ class DowngradeController < ApplicationController
 
   end
 
-  flash[:notice] = "You have sucessfully downgraded. All of your private wikis are now available for public viewing."
+  # flash[:notice] = "You have sucessfully downgraded. All of your private wikis are now available for public viewing."
 
   redirect_to root_path
 end
