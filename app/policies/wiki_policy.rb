@@ -34,7 +34,7 @@ class WikiPolicy < ApplicationPolicy
       wikis_ary = []
 
       #allow guest to view all public wikis
-      if user.ni?
+      if user.nil?
         wiKis
 
         wiKis.each do |wiki|
