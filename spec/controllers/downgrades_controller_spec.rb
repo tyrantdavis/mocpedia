@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe DowngradeController, type: :controller do
+RSpec.describe DowngradesController, type: :controller do
 
   describe "GET #new" do
     it "returns http success" do

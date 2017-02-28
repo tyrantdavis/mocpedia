@@ -20,6 +20,10 @@ class WikiPolicy < ApplicationPolicy
     user.present? && ((record.user == user) || user.admin?)
   end
 
+  def show?
+    !record.private? || record.user == user
+  end
+
 
   class Scope
     attr_reader :user, :scope
@@ -30,14 +34,12 @@ class WikiPolicy < ApplicationPolicy
     end
 
     def resolve
-      wiKis = scope.all
+      wikis = scope.all
       wikis_ary = []
 
       #allow guest to view all public wikis
       if user.nil?
-        wiKis
-
-        wiKis.each do |wiki|
+        wikis.each do |wiki|
           if wiki.private == false
             wikis_ary.push(wiki)
           end
@@ -45,22 +47,11 @@ class WikiPolicy < ApplicationPolicy
 
       #if user is an admin show all wikis
       elsif user.admin?
-        wiKis
+        wikis
       #if user premium show all public wikis and private wikis the user created.
-      elsif user.premium?
-        wiKis
-
-        wiKis.each do |wiki|
+      else
+        wikis.each do |wiki|
           if wiki.private == false || (wiki.user == user)
-            wikis_ary.push(wiki)
-          end
-        end
-      #if user standard show public wikis only
-      else user.standard?
-        wiKis
-
-        wiKis.each do |wiki|
-          if wiki.private == false
             wikis_ary.push(wiki)
           end
         end

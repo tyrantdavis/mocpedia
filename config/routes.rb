@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :wikis
   resources :charges, only: [:new, :create]
-  resources :downgrade, only: [:new, :create]
+  resources :downgrades, only: [:new, :create]
   resources :secret, only: [:index]
 
   authenticated :user do
@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   end
 
   get 'secret/index'
-  get 'downgrade/new'
   get 'welcome/index'
   get 'about' => 'welcome#about'
   root to: 'welcome#index'
