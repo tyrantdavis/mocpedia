@@ -3,15 +3,8 @@ class DowngradesController < ApplicationController
   end
 
   def create
-    # Change user role to standard then...
+    # Change user role to standard then disable private wikis...
     current_user.standard!
-
-    # @wikis = current_user.wikis
-    #
-    # @wikis.each do |wiki|
-    #   # ... make private wikis public.
-    #   wiki.update_attribute(:private, false)
-    # end
 
     current_user.wikis.update_all(private: false)
 
