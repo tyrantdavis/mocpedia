@@ -15,7 +15,7 @@ end
               name: RandomData.random_name,
               email: RandomData.random_email,
               password: "password"
-              )
+              ) 
     user.save!
   end
 

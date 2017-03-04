@@ -21,7 +21,7 @@ class WikiPolicy < ApplicationPolicy
   end
 
   def show?
-    !record.private? || record.user == user
+    !record.private? || record.user == user || record.users.include?(user)
   end
 
 
@@ -48,7 +48,13 @@ class WikiPolicy < ApplicationPolicy
       #if user is an admin show all wikis
       elsif user.admin?
         wikis
-      #if user premium show all public wikis and private wikis the user created.
+      #if the user is premium show all public and private wikis the user created, or private wikis the user is a collaborator on.
+      elsif user.premium?
+        wikis.each do |wiki|
+          if wiki.private == false || wiki.owner == user || wiki.collaborators.include?(user)
+            wikis.push(wiki)
+          end
+        end
       else
         wikis.each do |wiki|
           if wiki.private == false || (wiki.user == user)

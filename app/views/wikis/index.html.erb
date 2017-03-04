@@ -21,7 +21,8 @@
      <% end %>
    </div>
  </div>
-
+<% if user_signed_in? %>
  <div>
   <%= link_to "New Wiki", new_wiki_path, class: 'btn btn-primary btn-block' %>
 </div>
+<% end %>
