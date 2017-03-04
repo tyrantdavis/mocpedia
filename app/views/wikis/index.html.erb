@@ -6,7 +6,7 @@
  </div>
 <span>&nbsp;</span>
  <div class="row">
-   <div class="col-md-12">
+   <div class="col-md-12 page_info">
        <% @wikis.each do |wiki| %>
        <div class="media">
          <div class="media-body">
@@ -21,8 +21,16 @@
      <% end %>
    </div>
  </div>
-
  <div>
+   <% if user_signed_in? %>
   <%= link_to "New Wiki", new_wiki_path, class: 'btn btn-primary btn-block' %>
-</div>
-<br>
+</div><br />
+<% end %>
+<br />
+<br />
+<div class="digg_pagination">
+    <div class="page_info">
+      <%= page_entries_info @wikis %>
+    </div>
+    <%= will_paginate @wikis, :container => false %>
+  </div>

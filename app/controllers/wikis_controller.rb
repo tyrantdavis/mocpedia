@@ -1,4 +1,5 @@
 class WikisController < ApplicationController
+  require 'will_paginate/array'
 
   before_action :set_wiki, except: [:new, :create, :index]
 
@@ -23,6 +24,7 @@ class WikisController < ApplicationController
 
   def index
     @wikis = policy_scope(Wiki)
+    @wikis = Wiki.order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
   end
 
   def show
