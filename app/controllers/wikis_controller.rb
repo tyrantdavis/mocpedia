@@ -23,8 +23,7 @@ class WikisController < ApplicationController
   end
 
   def index
-    @wikis = policy_scope(Wiki)
-    @wikis = Wiki.order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
+    @wikis = policy_scope(Wiki.order("created_at DESC")).paginate(page: params[:page], per_page: 6)
   end
 
   def show
