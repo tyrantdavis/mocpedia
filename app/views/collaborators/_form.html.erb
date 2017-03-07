@@ -1,0 +1,12 @@
+<% User.all.each do |user| %>
+ 	<% next if user == current_user %>
+ 	<p> Username: <%= user.name %>
+ 	 Email: <%= user.email %>
+ 		<% if Collaborator.where(user_id: user.id, wiki_id: @wiki.id).first %>
+      <% collaborator = Collaborator.find_by(wiki_id: @wiki.id, user_id: user.id) %>
+ 			<%= link_to "Remove this collaborator", wiki_collaborator_path(@wiki, collaborator), class: 'btn btn-info', method: :delete, data:{ confirm: "Are you sure you would like to remove this collaborator?"} %>
+ 		<% else %>
+ 				<%= link_to "Add as collaborator", wiki_collaborators_path(@wiki, user_id: user.id), method: :post, class: 'btn btn-success' %>
+
+ 		<% end %></p>
+ <% end %>

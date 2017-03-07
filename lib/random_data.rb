@@ -1,5 +1,10 @@
 module RandomData
 
+  def self.random_username
+    username = random_word
+    "#{username}"
+  end
+
   def self.random_name
     first_name = random_word.capitalize
     last_name = random_word.capitalize
@@ -10,7 +15,7 @@ module RandomData
     "#{random_word}@#{random_word}.#{random_word}"
   end
 
-  def self.random_paragraph 
+  def self.random_paragraph
     sentences = []
     rand(4..6).times do
     sentences << random_sentence

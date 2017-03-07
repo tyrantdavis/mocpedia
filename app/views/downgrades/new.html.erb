@@ -1,4 +1,4 @@
 <h1>Downgrade#new</h1>
 <p>Find me in app/views/downgrade/new.html.erb</p>
 
-<%= link_to "Downgrade me!", downgrades_path, method: :post, class: "btn btn-danger" %>
+<%= link_to "Downgrade!", downgrades_path, method: :post, class: "btn btn-danger", data: {confirm: "Are you sure? All of your private wikis will be public. If you decide you want private wikis again you will have to repay."} %>

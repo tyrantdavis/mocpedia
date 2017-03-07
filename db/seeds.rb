@@ -1,17 +1,45 @@
 require 'random_data'
 
-5.times do
+
+admin = User.new(
+username: "admin",
+name: "Admin User",
+email: "admin@blocipediaapp.com",
+role: 2,
+password: "123123",
+password_confirmation: "123123"
+)
+admin.save!
+admin.skip_confirmation!
+
+
+premi = User.new(
+username: "premiumuser",
+name: "Premium",
+email: "primo@example.com",
+role: 1,
+password: "password",
+password_confirmation: "password"
+)
+premi.save!
+premi.skip_confirmation!
+
+
+52.times do
     user = User.new(
+        username: RandomData.random_username,
         name: RandomData.random_name,
         email: RandomData.random_email,
-        password: "password"
+        password: "password",
+        password_confirmation: "password"
         )
     user.save!
+    user.skip_confirmation!
 end
 
 users = User.all
 
-10.times do
+52.times do
     Wiki.create!(
         title: RandomData.random_sentence,
         body: RandomData.random_paragraph,

@@ -49,6 +49,14 @@ class WikiPolicy < ApplicationPolicy
       elsif user.admin?
         wikis
       #if user premium show all public wikis and private wikis the user created.
+      elsif user.premium?
+        wikis
+        wikis.each do |wiki|
+          if wiki.private == false || (wiki.user == user)
+            wikis_ary.push(wiki)
+          end
+        end
+      # if user standard show public wikis only
       else
         wikis.each do |wiki|
           if wiki.private == false || (wiki.user == user)
