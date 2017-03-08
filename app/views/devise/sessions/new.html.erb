@@ -3,20 +3,12 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
-<<<<<<< 129af75c10f0e35675f99d099dc0d8c0e7be2c35
     <%= f.text_field :email, class: 'form-control', placeholder: "Email" %>
-=======
-    <%= f.email_field :email, autofocus: true, class: 'form-control' %>
->>>>>>> Customize user sign in view
   </div>
 
   <div class="field">
     <%= f.label :password %><br />
-<<<<<<< 129af75c10f0e35675f99d099dc0d8c0e7be2c35
     <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: "Password" %>
-=======
-    <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
->>>>>>> Customize user sign in view
   </div>
 
   <% if devise_mapping.rememberable? -%>
@@ -27,13 +19,9 @@
   <% end -%>
 
   <div class="actions">
-<<<<<<< 129af75c10f0e35675f99d099dc0d8c0e7be2c35
-    <%= f.submit "Log in", class: 'btn btn-default' %>
-  </div>
-=======
     <%= f.submit "Log in", class: 'btn btn-primary' %>
-  </div><br />
->>>>>>> Customize user sign in view
+  </div>
+
 <% end %>
 <br />
 <%= render "devise/shared/links" %>
