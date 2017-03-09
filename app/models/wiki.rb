@@ -11,4 +11,8 @@ class Wiki < ActiveRecord::Base
 
   default_scope { order('created_at DESC') }
 
+  def collaborator_for(user)
+    collaborators.find_by(user: user)
+  end
+
 end

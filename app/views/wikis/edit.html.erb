@@ -12,6 +12,13 @@
         <%= f.label :body %>
         <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter wiki body" %>
       </div>
+      <% if current_user.premium? || current_user.admin?  %>
+         <div class="form-group">
+           <%= f.label :private %>
+           <%= f.check_box :private %>
+          </div>
+      <% end %>
+
       <div class="col-md-6">
         <%= f.submit "Save", class: 'btn btn-default btn-block' %>
       </div>
@@ -20,25 +27,7 @@
     <%= link_to "Cancel", @wiki, class: 'btn btn-primary btn-block' %>
   </div>
 </div>
-<span>&nbsp;</span>
-<% if current_user.role == "premium_user" || current_user.role == "admin"  %>
-   <div class="form-group">
-     <%= f.label :private %>
-     <%= f.check_box :private %>
-    </div>
-    <h3> Collaborators Dash </h3>
-    <table class="table">
-            <% @wiki.collaborators.each do |collaborator| %>
-      <tr>
-              <td> <%= collaborator.user.name %> </td>
-        <td>
-                <%= link_to "Remove Collaborator", wiki_collaborator_path(collaborator.id), method: :delete, class: 'btn btn-danger' %>
-        </td>
-      </tr>
-     <% end %>
-         </table>
 
-        <%= link_to "Add Collaborator", new_wiki_collaborator_path(wiki_id: @wiki.id), class: 'btn btn-success' %>
- <% end %>
+<% if current_user.premium? || current_user.admin?  %>
+  <%= link_to "Manage Collaborators", wiki_collaborators_path(@wiki), class: "btn btn-info" %>
 <% end %>
-</div>
