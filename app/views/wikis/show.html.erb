@@ -29,7 +29,7 @@
 
 <% end %>
 <% if policy(@wiki).create? %>
-  	<p><%= link_to "New wiki", new_wiki_path, class: 'label label-info' %></p>
+  	<p><%= link_to "Create Wiki", new_wiki_path, class: 'btn btn-warning btn-lg' %></p>
  <% end %>
  <% if @wiki.private? %>
  	<%= render  'collaborators/form', locals: { wiki: @wiki} %>
