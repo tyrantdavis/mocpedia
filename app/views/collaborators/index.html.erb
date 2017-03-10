@@ -5,6 +5,12 @@
     <th>User Name</th>
     <th></th>
   </thead>
+  <div class="digg_pagination">
+      <div class="page_info">
+        <%= page_entries_info @users %>
+      </div>
+      <%= will_paginate @users, :container => false %>
+    </div>
   <tbody>
     <% @users.each do |user| %>
       <tr>
