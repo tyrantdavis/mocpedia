@@ -2,7 +2,6 @@ class ChargesController < ApplicationController
   before_action :authenticate_user!
 
   def create
-     # Creates a Stripe Customer object, for associating
      # with the charge
      customer = Stripe::Customer.create(
        email: current_user.email,
@@ -13,7 +12,7 @@ class ChargesController < ApplicationController
      charge = Stripe::Charge.create(
        customer: customer.id, # Note -- this is NOT the user_id in your app
        amount: 15_00,
-       description: "Blocipedia Premium Membership - #{current_user.email}",
+       description: "doUpedia Premium Membership - #{current_user.email}",
        currency: 'usd'
      )
 
@@ -33,7 +32,7 @@ class ChargesController < ApplicationController
    def new
       @stripe_btn_data = {
       key: "#{ Rails.configuration.stripe[:publishable_key] }",
-      description: "Blocipedia Premium Membership - #{current_user.name}",
+      description: "doUpedia Premium Membership - #{current_user.name}",
       amount: 15_00
     }
   end
