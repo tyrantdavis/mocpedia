@@ -20,9 +20,9 @@
          <% if user_signed_in?  && current_user.standard? %>
          <span class="text-muted">
            <span class="glyphicon glyphicon-user">
-           </span> User Name:
+           </span> User:
          </span>
-         <strong ><%= current_user.name %></strong> |
+         <strong ><%= current_user.username %></strong> |
          <span><%= link_to 'Go Premium', new_charge_path, :class => 'navbar-link'  %></span> |
          <span><%= link_to 'Edit Profile', edit_user_registration_path, :class => 'navbar-link' %> | <%= link_to "Sign Out", destroy_user_session_path  %></span>
 
@@ -30,9 +30,10 @@
          <% elsif user_signed_in?  && current_user.premium? %>
          <span class="text-muted"><span class="glyphicon glyphicon-user">
          </span>
-         User Name:</span> <strong class="edit_profile_premi"><%= current_user.name %></strong> |
+         User Name:</span> <strong class="edit_profile_premi"><%= current_user.username %></strong> |
          <span><%= link_to 'Standard', new_downgrade_path, :class => 'navbar-link'  %></span> |
-         <%= link_to 'Edit Profile', edit_user_registration_path, :class => 'navbar-link' %> | <%= link_to "Sign Out", destroy_user_session_path  %>
+         <%= link_to 'Edit Profile', edit_user_registration_path, :class => 'navbar-link' %> |
+         <%= link_to "Sign Out", destroy_user_session_path  %>
 
          <% else %>
 
