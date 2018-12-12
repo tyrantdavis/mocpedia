@@ -17,7 +17,8 @@ class ChargesController < ApplicationController
      )
 
      current_user.premium!
-
+     current_user.wikis.update_all(private: true)
+     
      flash[:notice] = "Thanks for all the money, #{current_user.email}! Feel free to pay me again."
      redirect_to user_unlock_path
 
