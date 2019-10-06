@@ -4,7 +4,7 @@ require 'random_data'
 admin = User.new(
 username: "admin",
 name: "Admin User",
-email: "admin@doupediaapp.com",
+email: "admin@mockpediaapp.com",
 role: 2,
 password: "123123",
 password_confirmation: "123123"

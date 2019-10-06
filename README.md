@@ -1,13 +1,13 @@
 
-  # doUpedia
+  # Mockpedia
 
  A markdown-based SAAS collaboration and information exchange platform that allows users to create and share wikis with the world community. It's all about **U**!
 
-  [doUpedia Demo](https://doupedia.herokuapp.com/)
+  [Mockpedia Demo](https://mockpedia.herokuapp.com/)
 
 
 
-  ![doupediahome](https://user-images.githubusercontent.com/14861025/50020504-c67e9b80-ff9b-11e8-87da-92716b7ed08e.png)
+  ![mockpediahome](https://user-images.githubusercontent.com/14861025/50020504-c67e9b80-ff9b-11e8-87da-92716b7ed08e.png)
 
   ![screen shot 2018-12-14 at 12 37 38 pm](https://user-images.githubusercontent.com/14861025/50021015-4fe29d80-ff9d-11e8-8803-7d6995d384d5.png)
 
@@ -74,7 +74,7 @@ Sign up and confirm your account via email.
 * Click on a wiki to to see more details.
 A **new** button will populates on the index page after sign in. Use it to quickly create a public wiki.
 
-* **doUpedia** link takes you to **your wikis** page. You can create and view wikis from here as well.
+* **mockpedia** link takes you to **your wikis** page. You can create and view wikis from here as well.
 
 * Click one of your **wikis** to see **details**. There will be **options** to **edit, delete, etc…**
 
@@ -118,7 +118,7 @@ ___
 #### Configuration:
 Figaro creates a _config/application.yml_ file, which sets up and stores  **_environment variables_**, and adds it into your _.gitignore_ file. The _config/application.example.yml_ file demonstrates the appropriate way to store _environment variables_.
 
-Run doUpedia locally:
+Run mockpedia locally:
 
 * Clone the repository
 * Run bundle install
