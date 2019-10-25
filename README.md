@@ -3,7 +3,7 @@
 
  A markdown-based SAAS collaboration and information exchange platform that allows users to create and share wikis with the world community!
 
-  [Mockpedia Demo](https://mockpedia.herokuapp.com/)
+  <!-- [Mockpedia Demo](https://mockpedia.herokuapp.com/) -->
 
 ![Screen Shot 2019-10-25 at 10 58 46 AM](https://user-images.githubusercontent.com/14861025/67586213-c0f2f580-f716-11e9-9a03-582371dc027b.png)
 
