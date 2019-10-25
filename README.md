@@ -5,9 +5,8 @@
 
   [Mockpedia Demo](https://mockpedia.herokuapp.com/)
 
+![Screen Shot 2019-10-25 at 10 58 46 AM](https://user-images.githubusercontent.com/14861025/67586213-c0f2f580-f716-11e9-9a03-582371dc027b.png)
 
-
-  ![mockpediahome](https://user-images.githubusercontent.com/14861025/50020504-c67e9b80-ff9b-11e8-87da-92716b7ed08e.png)
 
   ![screen shot 2018-12-14 at 12 37 38 pm](https://user-images.githubusercontent.com/14861025/50021015-4fe29d80-ff9d-11e8-8803-7d6995d384d5.png)
 
