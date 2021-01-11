@@ -24,7 +24,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'pundit'
 gem 'stripe'
-gem 'redcarpet', '~> 3.3', '>= 3.3.4'
+gem 'redcarpet', '~> 3.5'
 gem 'will_paginate', '~> 3.1', '>= 3.1.5'
 
 group :development, :test do
